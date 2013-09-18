@@ -1,0 +1,126 @@
+html,body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	overflow: hidden;
+	font-family: Arial, Helvetica, Sans-serif;
+	font-size: 11px;
+	color: #333;
+	
+	background-color: #3a3a3a;
+	background-image: -moz-radial-gradient(50% 50%, circle farthest-corner, #3A3A3A, #000000 100%);
+	background-image: -webkit-radial-gradient(50% 50%, circle farthest-corner, #3A3A3A, #000000 100%);
+	background-image: -o-radial-gradient(50% 50%, circle farthest-corner, #3A3A3A, #000000 100%);
+	background-image: -ms-radial-gradient(50% 50%, circle farthest-corner, #3A3A3A, #000000 100%);
+	background-image: radial-gradient(50% 50%, circle farthest-corner, #3A3A3A, #000000 100%)
+}
+
+.inner {
+	margin: 20px;
+}
+
+#content {
+	position: absolute;
+	width: 515px;
+	
+	left: 50%;
+	margin-left: -257px;
+	
+	top: 50%;
+	margin-top: -125px;
+}
+
+.logo {
+	width: 250px;
+	height: 250px;
+	background: url('logo.svg') no-repeat scroll 0 0;
+	text-indent: -10000px;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	color: #FFF;
+	-webkit-text-size-adjust:none;
+	opacity: 0.3;
+}
+
+ul.social, ul.social ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	float: left;
+}
+	ul.social ul {
+		width: 130px;
+	}
+	
+	ul.social li {
+		float: left;
+	}
+	
+	ul.social li.icon {
+		width: 55px;
+		height: 55px;
+		margin-left: 10px;
+		margin-bottom: 10px;
+		background: url('sprite_social.svg') no-repeat scroll 0 0 #000;
+		
+		-webkit-transition: all 0.2s ease-out;
+		-moz-transition: all 0.2s ease;
+		-o-transition: all 0.2s ease;
+	}
+		ul.social li.icon:hover {
+			-webkit-transform: rotate(-7deg);
+			-moz-transform: rotate(-7deg);
+			-o-transform: rotate(-7deg);
+		}
+	
+	
+	ul.social li a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		text-indent: -10000px;
+	}
+	
+	ul.social li.vimeo {
+		background-position: 0px 0px;
+	}
+	ul.social li.facebook {
+		background-position: -360px 0px;
+	}
+	ul.social li.xing {
+		background-position: -360px -65px;
+		background-color: #FFF;
+	}
+	ul.social li.github {
+		background-position: -120px 0px;
+	}
+	ul.social li.tumblr {
+		background-position: -240px 0px;
+		clear: left;
+	}
+	ul.social li.gplus {
+		background-position: -415px 0px;
+		background-color: #bd372a;
+	}
+	
+	ul.social li.vimeo,
+	ul.social li.tumblr,
+	ul.social li.github {
+		width: 120px;
+		height: 120px;
+	}

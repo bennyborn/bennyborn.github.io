@@ -117,6 +117,7 @@ ul.social, ul.social ul {
 		background-position: -415px 0px;
 		background-color: #bd372a;
 	}
+	ul.social li.networks { clear: left; }
 	
 	ul.social li.vimeo,
 	ul.social li.tumblr,

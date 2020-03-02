@@ -1,0 +1,143 @@
+@import "reset";
+@import "fonts";
+
+@mixin sprite($sprite-url, $size, $x, $y, $x-span:1, $y-span:1, $sprite-width:auto, $sprite-height:200px, $sprite-grid:40px) {
+    background: url($sprite-url) no-repeat scroll;
+    width: #{$x-span*$size};
+    height: #{$y-span*$size};
+    background-position: -#{$x*$size} -#{$y*$size};
+    @if $sprite-width == 'auto' && $sprite-height != 'auto' {
+        background-size: auto #{$sprite-height/($sprite-grid/$size)};
+    } @else if $sprite-width == 'auto' && $sprite-height != 'auto' {
+        background-size: #{$sprite-width/($sprite-grid/$size)} auto;
+    }
+}
+
+html {
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    @media screen and (max-width: 400px) {
+        font-size: 14px;
+    }
+
+    color: #888;
+    background: #161616;
+
+    &::-webkit-scrollbar { display: none; }
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+
+.wrapper {
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &:before {
+
+        content: "";
+        display: block;
+        width: 100vw;
+        height: 100vh;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+
+        background-image: url('../img/triangles.svg');
+        background-position: 50% 50%;
+        background-size: cover;
+        mix-blend-mode: lighten;
+        opacity: 0.1;
+    }
+}
+
+main {
+
+    margin: auto 0;
+    z-index: 10;
+
+    img {
+        display: block;
+        width: 20em;
+        height: auto;
+    }
+
+    ul {
+
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+        margin-top: 2.5em;
+
+        li {
+
+            transition: all .5s;
+
+            &:hover {
+                transform: translateY(5%);
+            }
+
+            a {
+
+                display: block;
+                background-color: #fff !important;
+                transition: all .25s;
+
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+                -webkit-tap-highlight-color: transparent;
+
+                &[href*='facebook.com'] {
+                    @include sprite('../img/sprite-icons.svg', 4.5em, 0, 0);
+                    &:hover { background-color: #3b5998 !important; }
+                }
+
+                &[href*='twitter.com'] {
+                    @include sprite('../img/sprite-icons.svg', 4.5em, 1, 0);
+                    &:hover { background-color: #1DA1F2 !important; }
+                }
+
+                &[href*='github.com'] {
+                    @include sprite('../img/sprite-icons.svg', 4.5em, 2, 0);
+                    &:hover { background-color: #f5f5f5 !important; }
+                }
+
+                &[href*='numero2.de'] {
+                    @include sprite('../img/sprite-icons.svg', 4.5em, 3, 0);
+                    &:hover { background-color: #95abcb !important; }
+                }
+            }
+        }
+    }
+}
+
+footer {
+
+    z-index: 10;
+
+    font-size: 14/16*1rem;
+    margin: 5em 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    em {
+
+        display: inline-block;
+        overflow: hidden;
+        margin-left: 1ch;
+        color: transparent;
+        @include sprite('../img/sprite-icons.svg', 1.5em, 0, 1);
+    }
+}
